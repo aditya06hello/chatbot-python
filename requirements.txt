@@ -11,13 +11,15 @@ cryptography==43.0.1
 distro==1.9.0
 Flask==3.0.3
 fuzzywuzzy==0.18.0
+googletrans==4.0.0rc1
 gTTS==2.5.3
+gunicorn==23.0.0
 h11==0.14.0
 h2==3.2.0
 hpack==3.0.0
 hstspreload==2024.9.1
-httpx==0.23.3  # Retain this version for compatibility
-# Removed specific version for httpcore to allow pip to choose compatible version
+httpcore==1.0.5
+httpx==0.27.2
 hyperframe==5.2.0
 idna==2.10
 itsdangerous==2.2.0
@@ -28,10 +30,10 @@ Levenshtein==0.26.0
 MarkupSafe==2.1.5
 numpy==2.1.1
 openai==1.50.2
+packaging==24.1
 pdfminer.six==20231228
 pdfplumber==0.11.4
 pillow==10.4.0
-pip==24.2
 pycparser==2.22
 pydantic==2.9.2
 pydantic_core==2.23.4
