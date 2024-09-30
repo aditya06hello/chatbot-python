@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify, send_file, make_response
+from flask_cors import CORS  # Import CORS
 from gtts import gTTS
 import wikipedia
 import os
 import openai
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 # Set up your OpenAI API key (replace with your actual key)
 openai.api_key = "sk-_5wd5PXniVTcS4iPY4InxR_mjmHQp9O7G5No9pwVWWT3BlbkFJn2B3w0ca-cGYAWyeTx5ioZK1G8Ltb3Z6g5mWIln2AA"
@@ -37,7 +39,6 @@ def search_wikipedia(query):
             return summary
         
     except wikipedia.exceptions.DisambiguationError as e:
-        # If disambiguation occurs, list possible options
         return f"অনুগ্রহ করে আরো নির্দিষ্ট করুন: {', '.join(e.options)}"
     
     except wikipedia.exceptions.PageError:
